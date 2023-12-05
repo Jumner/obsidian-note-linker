@@ -103,7 +103,7 @@ fn merge_link_match_into_link_matches(
 ) -> Vec<LinkMatch> {
 	let index = merged_link_matches
 		.iter()
-		.position(|m: &LinkMatch| m.position().is_equal_to(&link_match.position()));
+		.position(|m: &LinkMatch| m.position().does_overlap(&link_match.position()));
 
 	if let Some(index) = index {
 		// merge it into the existing match, if the position is the same

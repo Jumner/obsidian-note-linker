@@ -36,7 +36,7 @@ export const LinkMatchesListComponent = (
 							noteChangeOperations.get(parentNote.path);
 						const selectedReplacement = selectedReplacements.find(
 							(replacement: Replacement) => {
-								return replacement.position.is_equal_to(link_match.position);
+								return replacement.position.does_overlap(link_match.position); // Make links mutually exclusing when the ranges overlap.
 							}
 						);
 

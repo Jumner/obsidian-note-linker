@@ -54,7 +54,7 @@ export const LinkTargetCandidatesListComponent =
 					: createNoteChangeOperation();
 			_noteChangeOperation.replacements =
 				_noteChangeOperation.replacements?.filter(
-					(r: Replacement) => !r.position.is_equal_to(linkMatch.position)
+					(r: Replacement) => !r.position.is_equal_to(linkMatch.position) // NOTE Not sure what this does but leaving it as is_equal_to works
 				);
 			_noteChangeOperation.replacements?.push(replacement);
 			saveNoteChangeOperation(_noteChangeOperation);
