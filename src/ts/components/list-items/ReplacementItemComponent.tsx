@@ -35,7 +35,7 @@ export const ReplacementItemComponent = ({
     }
 
     const addReplacement = (noteChangeOperationToAdd: Replacement) => {
-        console.log(noteChangeOperationToAdd);
+        // console.log(noteChangeOperationToAdd);
         setSelectedReplacement(noteChangeOperationToAdd);
     }
 

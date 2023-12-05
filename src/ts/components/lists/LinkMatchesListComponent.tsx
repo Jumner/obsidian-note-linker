@@ -31,7 +31,6 @@ export const LinkMatchesListComponent = (
 				/>
 				<ul className={"hide-list-styling"}>
 					{linkFinderResult.linkMatches.map((link_match: LinkMatch) => {
-						// console.log(noteChangeOperations);
 						const noteChangeOperation: NoteChangeOperation =
 							noteChangeOperations.get(parentNote.path);
 						const selectedReplacement = selectedReplacements.find(
