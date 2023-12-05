@@ -53,7 +53,7 @@ export const ReplacementItemComponent = ({
             candidate.path
         );
 
-        if (doAdd) addReplacement(replacement)
+        if (doAdd) addReplacement(replacement) // TODO REALLY FUCKING SLOW
         else subtractReplacement()
     }
 

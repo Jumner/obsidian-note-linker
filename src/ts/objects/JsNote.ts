@@ -15,14 +15,18 @@ export default class JsNote extends Note {
 	}
 
 	static getNumberOfNotes(vault: Vault): number {
-		return vault.getMarkdownFiles().length;
+		return vault.getMarkdownFiles().filter(file => {
+			return (!file.basename.endsWith(".excalidraw")); // Ignore excailidraw.md files
+		}).length;
 	}
 
 	static async getNotesFromVault(
 		vault: Vault,
 		cache: MetadataCache
 	): Promise<JsNote[]> {
-		const notes = vault.getMarkdownFiles().map(async (file, index) => {
+		const notes = vault.getMarkdownFiles().filter(file => {
+			return !file.basename.endsWith(".excalidraw"); // Ignore excailidraw.md files
+		}).map(async (file, index) => {
 			return await JsNote.fromFile(file, vault, cache);
 		});
 		return await Promise.all(notes);
